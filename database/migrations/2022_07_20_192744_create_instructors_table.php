@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-            $table->string('phone');
+            $table->string('phone')->nullable(true);
             $table->text('address');
             $table->date('birth_date');
+            $table->string('image')->nullable(true);
             $table->string('scientific_degree');
             $table->unsignedBigInteger('account_id');
 

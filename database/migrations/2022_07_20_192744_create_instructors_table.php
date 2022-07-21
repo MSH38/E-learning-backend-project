@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone')->nullable(true);
             $table->text('address');
-            $table->date('birth_date');
+            $table->date('birth_date')->nullable(true);
             $table->string('image')->nullable(true);
             $table->string('scientific_degree');
             $table->unsignedBigInteger('account_id');

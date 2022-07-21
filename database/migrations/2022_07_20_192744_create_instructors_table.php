@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('address');
             $table->date('birth_date')->nullable(true);
             $table->string('image')->nullable(true);
-            $table->string('scientific_degree');
+            $table->string('scientific_degree')->nullable(true);
             $table->unsignedBigInteger('account_id');
 
             $table->foreign('account_id')->references('id')->on('accounts');

@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-            $table->string('phones');
+            $table->string('phone');
             $table->text('address');
-            $table->integer('birth_date');
-            $table->integer('scientific_degree');
+            $table->date('birth_date');
+            $table->string('scientific_degree');
             $table->unsignedBigInteger('account_id');
- 
+
             $table->foreign('account_id')->references('id')->on('accounts');
             $table->timestamps();
         });

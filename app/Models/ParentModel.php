@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Instructor extends Model
+class ParentModel extends Model
 {
     use HasFactory;
+    protected $table='parents';
     protected $fillable = [
         'first_name',
         'last_name',
@@ -17,14 +18,14 @@ class Instructor extends Model
         'account_id'
 
     ];
-    public function supports(){
-        return $this->hasMany('instructors_support','instructor_id');
-    }
+//    public function supports(){
+//        return $this->hasMany('instructors_support','instructor_id');
+//    }
     public function my_account(){
         return $this->belongsTo('accounts','account_id');
     }
-    public function courses(){
-        return $this->hasMany('courses','instructor_id');
+    public function students(){
+        return $this->hasMany('students','parent_id');
     }
 
 }

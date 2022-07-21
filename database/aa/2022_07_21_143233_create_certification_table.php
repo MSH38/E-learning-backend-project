@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses_content', function (Blueprint $table) {
+        Schema::create('certification', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('content-type');
-            $table->forgienId('courseId')->constrained();
+
+            // $table->unsignedBigInteger('certification_id');
+            $table->double('degree');
+            $table->foreignId('student_id')->constrained('students');
+            $table->foreignId('exam_id')->constrained('exam');
+
+
         });
     }
 
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses_content');
+        Schema::dropIfExists('certification');
     }
 };

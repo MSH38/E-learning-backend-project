@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('certification', function (Blueprint $table) {
+        Schema::create('exam_content', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->unsignedBigInteger('certification_id');
-            $table->double('degree');
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->foreign('exam_id')->references('id')->on('exam');
-
+            // $table->unsignedBigInteger('exam_content_id');
+            $table->string('question_source');
+            $table->string('exam_type');
+            $table->foreignId('exam_id')->constrained('exam');
 
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certification');
+        Schema::dropIfExists('exam_content');
     }
 };

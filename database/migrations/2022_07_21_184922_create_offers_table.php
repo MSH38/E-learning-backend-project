@@ -22,8 +22,8 @@ return new class extends Migration
             $table->dateTime('announce-date');
             $table->dateTime('start-date');
             $table->dateTime('end-date');
-            $table->forgeinId('course-id')->constrained('courses');
-            $table->forgeinId('admin-id')->constrained('admins');
+            $table->foreignId('course-id')->constrained('courses');
+            $table->foreignId('admin-id')->constrained('admins');
         });
     }
 

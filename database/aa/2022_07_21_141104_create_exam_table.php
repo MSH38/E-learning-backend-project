@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses_rate', function (Blueprint $table) {
+        Schema::create('exam', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->Integer('rate');
-            $table->string('comment');
-            $table->foreignId('student-Id')->constrained('students');
-            $table->forgeinId('courseId')->constrained('courses');
 
+            // $table->unsignedBigInteger('exam_id');
+            $table->date('announce_date');
+            $table->date('start_date');
+            $table->double('hours');
+            $table->integer('mark');
+            $table->foreignId('course_id')->constrained('courses');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses_rate');
+        Schema::dropIfExists('exam');
     }
 };

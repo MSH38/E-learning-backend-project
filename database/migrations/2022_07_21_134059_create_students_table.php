@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->unsignedBigInteger('student_id');
+            // $table->unsignedBigInteger('student_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
@@ -25,8 +24,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('scientific_degree')->nullable(true);
             $table->date('birth_date');
-            $table->foreign('account_id')->references('id')->on('accounts');
-            $table->foreign('parent_id')->references('id')->on('parents');
+            $table->foreignId('account_id')->constrained('accounts');
+            $table->foreignId('parent_id')->constrained('parents');
         });
     }
 

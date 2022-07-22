@@ -13,7 +13,7 @@ class ParentModel extends Model
         'first_name',
         'last_name',
         'email',
-        'address',
+
         'phone',
         'account_id'
 

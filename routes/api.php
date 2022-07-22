@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Parent\ParentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('parents','App\Http\Controllers\Api\Parent\ParentController@parents');
+Route::get('getParent/{id}','App\Http\Controllers\Api\Parent\ParentController@parentByID');
+Route::post('newParent','App\Http\Controllers\Api\Parent\ParentController@create');
+Route::put('parent/{parent}','App\Http\Controllers\Api\Parent\ParentController@parentUpdate');
+//Route::get('getParents','App\Http\Controllers\Api\Parent\ParentController@parents');

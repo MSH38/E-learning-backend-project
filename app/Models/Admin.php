@@ -14,7 +14,6 @@ class Admin extends Model
         'password',
         'username',
         'phone'
-
     ];
 public function instructors_supported(){
     return $this->hasMany(Instructor_support::class);

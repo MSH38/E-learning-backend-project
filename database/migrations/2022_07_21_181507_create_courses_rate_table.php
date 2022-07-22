@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('comment');
             $table->foreignId('student-Id')->constrained('students');
             $table->foreignId('courseId')->constrained('courses');
-
         });
     }
 

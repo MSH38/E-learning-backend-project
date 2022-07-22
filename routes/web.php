@@ -20,5 +20,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+Route::resource('courseContents', App\Http\Controllers\courseContent::class);
+Route::resource('offers', App\Http\Controllers\Offer::class);
+Route::resource('coursestudent', App\Http\Controllers\CourseStudent::class);
 require __DIR__.'/auth.php';

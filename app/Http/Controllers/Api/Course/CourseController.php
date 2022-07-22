@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Api\Category;
+namespace App\Http\Controllers\Api\Course;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Course;
+use App\Models\Course_Rate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return response()->json(Category::get());
+        return response()->json(Course::get());
     }
 
     /**
@@ -49,12 +51,9 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
-        return response()->json(Category::find($id));
+        return response()->json(Course::find($id));
     }
 
-    public function getSubCategories($id){
-        return response()->json(Category::find($id)->sub_categories);
-    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -88,4 +87,17 @@ class CategoryController extends Controller
     {
         //
     }
+    public function avrageRate($id){
+       return response()->json(Course::find($id)->rates()->avg('rate'));
+    }
+    public function feedbacks($id){
+       return response()->json(Course::find($id)->rates);
+    }
+//    public function topRates($limit){
+////       return response()->json(Course_Rate::find($id)->rates()->avg('rate')->groupBy('cor'));
+//
+//    }
+public function getTopRated($limit){
+        return response()->json(Course::join('courses_rate','courses_rate.courseId','=','courses.id')->select('courses.*',DB::raw('avg(courses_rate.rate) as avrageRate'))->groupBy('courses.id')->orderBy('avrageRate','desc')->limit($limit)->get());
+}
 }

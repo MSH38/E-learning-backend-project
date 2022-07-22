@@ -28,4 +28,11 @@ class Course extends Model
     {
         return $this->belongsTo('App\Models\Admin','accepted_by');
     }
+    public function rates(){
+        return $this->hasMany(Course_Rate::class,'courseId');
+    }
+//      public function avrageRate(){
+//        return $this->hasMany(Course_Rate::class,'courseId')->avg('rate')->get();
+//    }
+
 }

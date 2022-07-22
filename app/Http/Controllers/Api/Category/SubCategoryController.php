@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sub_Category;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -15,6 +16,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         //
+        return response()->json(Sub_Category::get());
     }
 
     /**
@@ -47,8 +49,12 @@ class SubCategoryController extends Controller
     public function show($id)
     {
         //
+        return response()->json(Sub_Category::find($id));
     }
+public function getCourses($id){
+        return response()->json(Sub_Category::find($id)->courses);
 
+}
     /**
      * Show the form for editing the specified resource.
      *

@@ -37,9 +37,10 @@ Route::resource('subcategory', SubCategoryController::class);
 Route::get('getCourseBySubCategoryId/{SubCategory_id}', [SubCategoryController::class,'getCourses']);
 // courses resource index,show,....
 Route::resource('course', CourseController::class);
+Route::get('getCourses/{course_name}', [CourseController::class,'getCoursesByName']);
 // get the average rate of course by its id
 Route::get('getRates/{course_id}', [CourseController::class,'avrageRate']);
 // get the rates and comments   of course by its id
 Route::get('feedbacks/{course_id}', [CourseController::class,'feedbacks']);
-// get limit top rated courses 
+// get limit top rated courses
 Route::get('getTopRated/{limit}', [CourseController::class,'getTopRated']);

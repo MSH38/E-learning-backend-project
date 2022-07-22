@@ -76,6 +76,9 @@ class CourseController extends Controller
     {
         //
     }
+    public function getCoursesByName($name){
+return response()->json(        Course::where('title','like',"%$name%")->get());
+    }
 
     /**
      * Remove the specified resource from storage.

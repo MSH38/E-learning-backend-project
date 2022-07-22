@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('student_exams', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('status',['active','inactive']);
+            $table->string('image')->nullable(true);
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
-$table->enum('status',['pass','repeat']);
-            $table->double('mark');
-            $table->foreignId('student_id')->constrained('students');
-            $table->foreignId('exam_id')->constrained('exam');
-
-
         });
     }
 
@@ -32,6 +30,6 @@ $table->enum('status',['pass','repeat']);
      */
     public function down()
     {
-        Schema::dropIfExists('student_exams');
+        Schema::dropIfExists('sub_categories');
     }
 };

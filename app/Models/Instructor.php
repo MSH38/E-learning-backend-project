@@ -18,13 +18,13 @@ class Instructor extends Model
 
     ];
     public function supports(){
-        return $this->hasMany('instructors_support','instructor_id');
+        return $this->hasMany(Instructor_support::class,'instructor_id');
     }
     public function my_account(){
-        return $this->belongsTo('accounts','account_id');
+        return $this->belongsTo(Account::class,'account_id');
     }
     public function courses(){
-        return $this->hasMany('courses','instructor_id');
+        return $this->hasMany(Course::class,'instructor_id');
     }
 
 }

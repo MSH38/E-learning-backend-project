@@ -17,12 +17,15 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->Integer('fess');
+            $table->decimal('fess');
             $table->string('description');
-            $table->double('totalHours');
+            $table->double('totalHours')->nullable(true);
+            $table->integer('videosCount')->nullable(true);
+            $table->string('image')->nullable(true);
             $table->foreignId('instructor_id')->constrained('instructors');
             $table->unsignedBigInteger('accepted-by');
             $table->foreign('accepted-by')->references('id')->on('admins');
+            $table->foreignId('sub_category_id')->constrained('sub_categories');
         });
     }
 

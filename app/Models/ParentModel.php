@@ -22,10 +22,10 @@ class ParentModel extends Model
 //        return $this->hasMany('instructors_support','instructor_id');
 //    }
     public function my_account(){
-        return $this->belongsTo('accounts','account_id');
+        return $this->belongsTo(Account::class,'account_id');
     }
-    public function students(){
-        return $this->hasMany('students','parent_id');
-    }
+//    public function students(){
+//        return $this->hasMany(Student::class,'student_id');
+//    }
 
 }

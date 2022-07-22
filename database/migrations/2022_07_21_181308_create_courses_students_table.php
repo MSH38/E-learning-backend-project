@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->double('mark');
+            $table->enum('status',['enrolled','finish']);
             $table->foreignId('studentId')->constrained('students');
             $table->foreignId('courseId')->constrained('courses');
         });

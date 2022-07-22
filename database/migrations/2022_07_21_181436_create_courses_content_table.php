@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('content-type');
+            $table->string('source');
             $table->foreignId('courseId')->constrained('courses');
         });
     }

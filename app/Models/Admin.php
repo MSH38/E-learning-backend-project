@@ -17,16 +17,16 @@ class Admin extends Model
 
     ];
 public function instructors_supported(){
-    return $this->hasMany('instructors_support');
+    return $this->hasMany(Instructor_support::class);
 }
-public function students_supported(){
-    return $this->hasMany('students_support');
-}
+//public function students_supported(){
+//    return $this->hasMany(Student_support::class);
+//}
 public function accepted_courses(){
-    return $this->hasMany('courses','accepted_by');
+    return $this->hasMany(Course::class,'accepted_by');
 }
-public function offers(){
-    return $this->hasMany('offers');
-}
+//public function offers(){
+//    return $this->hasMany(Offer::class, 'offer_id');
+//}
 
 }

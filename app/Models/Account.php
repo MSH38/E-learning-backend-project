@@ -15,16 +15,16 @@ class Account extends Model
 'role',
 
     ];
-    public function students(){
-        return $this->hasOne('students','account_id');
-    }
+//    public function students(){
+//        return $this->hasOne(Student::class,'account_id');
+//    }
     public function parent(){
-        return $this->hasMany('parents','account_id');
+        return $this->hasOne(ParentModel::class,'account_id');
     }
     public function instructor(){
-        return $this->hasMany('instructors','instructor_id');
+        return $this->hasOne(Instructor::class,'account_id');
     }
-    public function admin(){
-        return $this->hasMany('admin','admin_id');
-    }
+//    public function admin(){
+//        return $this->hasMany('admin','admin_id');
+//    }
 }

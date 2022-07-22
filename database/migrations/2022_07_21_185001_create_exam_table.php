@@ -19,9 +19,9 @@ return new class extends Migration
 
             // $table->unsignedBigInteger('exam_id');
             $table->date('announce_date');
-            $table->date('start_date');
+            $table->dateTime('start_date');
             $table->double('hours');
-            $table->integer('mark');
+            $table->double('mark');
             $table->foreignId('course_id')->constrained('courses');
         });
     }

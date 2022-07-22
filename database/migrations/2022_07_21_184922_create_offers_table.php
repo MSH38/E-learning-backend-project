@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('discount-type');
-            $table->Integer('discount-value');
+            $table->decimal('discount-value');
             $table->string('title');
             $table->dateTime('announce-date');
             $table->dateTime('start-date');

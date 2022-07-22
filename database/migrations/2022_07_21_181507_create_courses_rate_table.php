@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('courses_rate', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->Integer('rate');
+            $table->tinyInteger('rate');
             $table->string('comment');
             $table->foreignId('student-Id')->constrained('students');
             $table->foreignId('courseId')->constrained('courses');

@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('scientific_degree')->nullable(true);
-            $table->date('birth_date');
+            $table->date('birth_date')->nullable(true);
+            $table->string('image')->nullable(true);
             $table->foreignId('account_id')->constrained('accounts');
             $table->foreignId('parent_id')->constrained('parents');
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+///route Nr
+Route::resource('Students',\App\Http\Controllers\StudentController::class);
+Route::resource('StudentsSupport',\App\Http\Controllers\StudentSupportController::class);
+Route::resource('exam',\App\Http\Controllers\ExamController::class);
+Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
+Route::resource('certification',\App\Http\Controllers\CertificationController::class);
+Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
+//done Nr
+
+
+
+

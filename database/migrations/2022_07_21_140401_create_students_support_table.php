@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('support');
             $table->foreign('admin_id')->references('id')->on('admins');
             $table->foreign('student_id')->references('id')->on('students');
-
-
         });
     }
 

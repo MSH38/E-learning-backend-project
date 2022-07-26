@@ -24,9 +24,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-Route::resource('courseContents', App\Http\Controllers\courseContent::class);
-Route::resource('offers', App\Http\Controllers\Offer::class);
-Route::resource('coursestudent', App\Http\Controllers\CourseStudent::class);
+Route::resource('course', App\Http\Controllers\courseController::class);
+Route::resource('courseContents', App\Http\Controllers\CourseContentController::class);
+Route::resource('offers', App\Http\Controllers\OfferController::class);
+Route::resource('coursestudent', App\Http\Controllers\CourseStudentController::class);
+Route::resource('category', App\Http\Controllers\categoryController::class);
+Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
+
+
 require __DIR__.'/auth.php';
 
 
@@ -57,10 +62,6 @@ Route::controller(ParentsController::class)->group(function () {
     
 });
 
-
-
-
-
 Route::controller(InstructorsController::class)->group(function () {
     Route::get('instructors/create', 'create');
     Route::get('instructors/index', 'index');
@@ -70,14 +71,12 @@ Route::controller(InstructorsController::class)->group(function () {
     
 });
 
-
 Route::controller(InstructorsSupportController::class)->group(function () {
     Route::get('instructors_support/create', 'create');
     Route::get('instructors_support/index', 'index');
     Route::get('instructors_support/edit/{id}', 'edit');
     Route::get('instructors_support/update/{id}', 'update');
     Route::get('instructors_support/delete/{id}', 'delete');
-    
 });
 
 

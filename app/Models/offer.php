@@ -19,5 +19,4 @@ class offer extends Model
         'course_id',
         'admin_id'
     ];
-
 }

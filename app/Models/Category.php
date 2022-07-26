@@ -12,7 +12,6 @@ class Category extends Model
     protected $fillable=[
         'name',
         'status'
-
     ];
     public function sub_categories(){
         return $this->hasMany(Sub_Category::class,'category_id');

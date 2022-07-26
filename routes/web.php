@@ -6,6 +6,7 @@ use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\InstructorsSupportController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +83,7 @@ Route::controller(InstructorsSupportController::class)->group(function () {
 
 
 
+Route::any('/category/create', [CategoryController::class, 'createCategory'])->name('createCategory');
+Route::get('categories', [CategoryController::class, 'allCategories'])->name('allCategories');
+Route::any('category/edit/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
+Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');

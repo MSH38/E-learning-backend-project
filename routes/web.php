@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\AccountsController;
@@ -34,7 +35,6 @@ Route::resource('subcategory', App\Http\Controllers\subCategoryController::class
 
 
 require __DIR__.'/auth.php';
-
 
 Route::controller(AdminsController::class)->group(function () {
     Route::get('admins/create', 'create');
@@ -86,3 +86,12 @@ Route::any('/category/create', [CategoryController::class, 'createCategory'])->n
 Route::get('categories', [CategoryController::class, 'allCategories'])->name('allCategories');
 Route::any('category/edit/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
 Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
+
+///route Nr
+Route::resource('Students',\App\Http\Controllers\StudentController::class);
+Route::resource('StudentsSupport',\App\Http\Controllers\StudentSupportController::class);
+Route::resource('exam',\App\Http\Controllers\ExamController::class);
+Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
+Route::resource('certification',\App\Http\Controllers\CertificationController::class);
+Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
+//done Nr

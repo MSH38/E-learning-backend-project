@@ -20,5 +20,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+Route::resource('/users',\App\Http\Controllers\Users\UserController::class)->middleware('auth');
 require __DIR__.'/auth.php';
+require __DIR__.'/category.php';

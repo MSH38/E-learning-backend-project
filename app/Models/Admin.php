@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class Admin extends Model
 {
+    use LaratrustUserTrait;
     use HasFactory;
     protected $fillable = [
         'name',

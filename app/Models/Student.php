@@ -10,10 +10,10 @@ class Student extends Model
     use HasFactory;
     protected $table="students";
     protected $fillable=[
-        'student_id',
+
         'first_name',
         'last_name',
-        'email',
+
         'phone',
         'address',
         'scientific_degree',
@@ -21,5 +21,8 @@ class Student extends Model
         'account_id',
         'parent_id'
     ];
+    public function account(){
+        return $this->belongsTo(User::class,'account_id');
+    }
 
 }

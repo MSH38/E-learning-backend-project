@@ -18,15 +18,15 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('support');
-<<<<<<< HEAD
+
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('student_id')->constrained('students');
 
 
-=======
-            $table->foreign('admin_id')->references('id')->on('admins');
-            $table->foreign('student_id')->references('id')->on('students');
->>>>>>> origin/Ahmed_Elnemr
+
+
+
+
         });
     }
 

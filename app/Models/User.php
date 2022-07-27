@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'username',
         'phone',
+        'role',
         'image'
     ];
 //protected $table='admins';
@@ -46,4 +47,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function admin()
+    {
+        return $this->hasOne(\App\Models\Admin::class, 'account_id');
+    }
+    public function student()
+    {
+        return $this->hasOne(\App\Models\Student::class, 'account_id');
+    }
+    public function parent()
+    {
+        return $this->hasOne(\App\Models\ParentModel::class, 'account_id');
+    }
+    public function instructor()
+    {
+        return $this->hasOne(\App\Models\Instructor::class, 'account_id');
+    }
 }

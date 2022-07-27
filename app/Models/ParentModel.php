@@ -12,7 +12,7 @@ class ParentModel extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'email',
+
 
         'phone',
         'account_id'
@@ -21,8 +21,8 @@ class ParentModel extends Model
 //    public function supports(){
 //        return $this->hasMany('instructors_support','instructor_id');
 //    }
-    public function my_account(){
-        return $this->belongsTo(Account::class,'account_id');
+    public function account(){
+        return $this->belongsTo(User::class,'account_id');
     }
 //    public function students(){
 //        return $this->hasMany(Student::class,'student_id');

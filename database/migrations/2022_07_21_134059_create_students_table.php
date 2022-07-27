@@ -19,14 +19,17 @@ return new class extends Migration
             // $table->unsignedBigInteger('student_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');
+
             $table->string('phone');
             $table->string('address');
             $table->string('scientific_degree')->nullable(true);
             $table->date('birth_date')->nullable(true);
-            $table->string('image')->nullable(true);
-            $table->foreignId('account_id')->constrained('accounts');
-            $table->foreignId('parent_id')->constrained('parents');
+
+            $table->unsignedBigInteger('account_id')->unique();
+            $table->unsignedBigInteger('parent_id')->unique();
+            $table->foreign('account_id')->references('id')->on('users');
+            $table->foreign('parent_id')->references('id')->on('parents');
+
         });
     }
 

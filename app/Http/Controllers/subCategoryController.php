@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\Category;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Sub_Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class subCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,6 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return response()->json(Category::get());
     }
 
     /**
@@ -49,12 +47,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
-        return response()->json(Category::find($id));
     }
 
-    public function getSubCategories($id){
-        return response()->json(Category::find($id)->sub_categories);
-    }
     /**
      * Show the form for editing the specified resource.
      *

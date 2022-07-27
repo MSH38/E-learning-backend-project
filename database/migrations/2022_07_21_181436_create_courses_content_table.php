@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('courses_content', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('content-type');
+            $table->string('content_type');
             $table->string('source');
             $table->foreignId('courseId')->constrained('courses');
         });

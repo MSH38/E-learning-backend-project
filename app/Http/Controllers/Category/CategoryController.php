@@ -1,11 +1,16 @@
 <?php
 
+<<<<<<< HEAD:app/Http/Controllers/Category/CategoryController.php
 namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
+=======
+namespace App\Http\Controllers;
+
+>>>>>>> refs/remotes/origin/main:app/Http/Controllers/courseController.php
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class courseController extends Controller
 {
     /**
      * Display a listing of the resource.

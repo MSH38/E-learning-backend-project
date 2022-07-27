@@ -1,7 +1,18 @@
 <?php
 
+<<<<<<< HEAD
 namespace App\Http\Controllers;
 
+=======
+<<<<<<< HEAD:app/Http/Controllers/Category/CategoryController.php
+namespace App\Http\Controllers\Category;
+
+use App\Http\Controllers\Controller;
+=======
+namespace App\Http\Controllers;
+
+>>>>>>> refs/remotes/origin/main:app/Http/Controllers/courseController.php
+>>>>>>> refs/remotes/origin/main
 use Illuminate\Http\Request;
 
 class courseController extends Controller
@@ -24,6 +35,10 @@ class courseController extends Controller
     public function create()
     {
         //
+<<<<<<< HEAD
+=======
+        return view('AdminDashboard.create');
+>>>>>>> refs/remotes/origin/main
     }
 
     /**

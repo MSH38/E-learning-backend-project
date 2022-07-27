@@ -59,6 +59,39 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        E-L-Platform Categories
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    @if(Auth::user()->hasPermission('users-read'))
+                    <li class="nav-item">
+                        <a href="{{route('createCategory')}}" class="nav-link active">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Category</p>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Auth::user()->hasPermission('users-create'))
+                    <li class="nav-item">
+                        <a href="{{route('users.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add User</p>
+                        </a>
+                    </li>
+                    @endif
+                    <li class="nav-item">
+                        <a href="./index3.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Dashboard v3</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             {{--                    <li class="nav-item">--}}
             {{--                        <a href="pages/widgets.html" class="nav-link">--}}
             {{--                            <i class="nav-icon fas fa-th"></i>--}}

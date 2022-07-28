@@ -12,14 +12,10 @@ class Category extends Model
     protected $table='categories';
     protected $fillable=[
         'name',
-<<<<<<< HEAD
-        'status'
-=======
+        // 'status'و
         'status',
         'slug', 
         'parent_id'
-
->>>>>>> 5874addaf486756759507a5c109e56a636baa72f
     ];
     public function subcategory()
     {

@@ -79,6 +79,24 @@ Route::get('/instructors_support/{id}',[InstructorsSupportController::class,'sho
 Route::post('/instructors_supports',[InstructorsSupportController::class,'store']);
 Route::post('/instructors_support/{id}',[InstructorsSupportController::class,'update']);
 Route::post('/instructors_supports/{id}',[InstructorsSupportController::class,'destroy']);
-// =======
-////
-// >>>>>>> origin/Ahmed_Elnemr
+
+//course content api routes
+Route::get('/coursecontents',[App\Http\Controllers\Api\Course\courseContentController::class,'index']);
+Route::get('/coursecontent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'show']);
+Route::post('/coursecontents',[App\Http\Controllers\Api\Course\courseContentController::class,'store']);
+Route::post('/coursecontent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'update']);
+Route::post('/coursecontent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'destroy']);
+
+//course content api routes
+Route::get('/coursestudents',[App\Http\Controllers\Api\Course\courseContentController::class,'index']);
+Route::get('/coursestudent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'show']);
+Route::post('/coursestudents',[App\Http\Controllers\Api\Course\courseContentController::class,'store']);
+Route::post('/coursestudent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'update']);
+Route::post('/coursestudent/{id}',[App\Http\Controllers\Api\Course\courseContentController::class,'destroy']);
+
+//offer api routes
+Route::get('/offers',[App\Http\Controllers\Api\Course\offerController::class,'index']);
+Route::get('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class,'show']);
+Route::post('/offers',[App\Http\Controllers\Api\Course\offerController::class,'store']);
+Route::post('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class,'update']);
+Route::post('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class,'destroy']);

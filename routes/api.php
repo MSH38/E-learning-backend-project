@@ -41,6 +41,7 @@ Route::resource('subcategory', SubCategoryController::class);
 Route::get('getCourseBySubCategoryId/{SubCategory_id}', [SubCategoryController::class,'getCourses']);
 // courses resource index,show,....
 Route::resource('course', CourseController::class);
+// search by course name
 Route::get('getCourses/{course_name}', [CourseController::class,'getCoursesByName']);
 // get the average rate of course by its id
 Route::get('getRates/{course_id}', [CourseController::class,'avrageRate']);

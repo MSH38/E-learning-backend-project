@@ -7,12 +7,6 @@ List Users
     Users
     @endsection
 @section('content')
-    <?php
-    if(!Illuminate\Support\Facades\Auth::user()->hasPermission('users.read'))
-        {
-            redirect('users.profile');
-        }
-    ?>
     <form method="post" action="">
         <div class="form-group">
             <div class="row ">
@@ -30,7 +24,7 @@ List Users
     <div class="card">
         <div class="card card-dark">
             <div class="card-header">
-                <h3 class="card-title">List all Users</h3>
+                <h3 class="card-title">List all Students</h3>
             </div>
 
             <!-- /.card-body -->
@@ -42,7 +36,6 @@ List Users
                 <thead>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>Full Name </th>
                     <th>Role</th>
                     <th>Eamil</th>
                     <th style="width: 40px">Action</th>
@@ -53,8 +46,7 @@ List Users
 
                 <tr>
                     <td>{{$i+1}}</td>
-                    <td>{{$user->first_name.' '.$user->last_name}}</td>
-                    <td>{{$user->role}}</td>
+                    <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
 
                     <td>

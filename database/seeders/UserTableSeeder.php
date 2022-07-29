@@ -17,7 +17,8 @@ class UserTableSeeder extends Seeder
     {
         $user=\App\Models\User::create(
             [
-
+                'first_name'=>'super ',
+                'last_name'=>'admin',
                 'email'=>'super@2admins.com',
                 'password'=>bcrypt('12345'),
                 'username'=>'80020197',
@@ -26,7 +27,7 @@ class UserTableSeeder extends Seeder
             ]
         );
         Admin::create([
-                'name'=>'super admin',
+
             'phone'=>'01148077556',
                 'account_id'=>$user->id
             ]

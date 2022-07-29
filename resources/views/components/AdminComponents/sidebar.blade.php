@@ -1,3 +1,9 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="{{asset('assets/dist/img/logo/logo.jfif')}}" alt="E-L-Platform Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">E-L-Platform</span>
+    </a>
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -5,7 +11,8 @@
             <img src="{{Auth::user()->image?asset('assets/dist/img/user-images/'.Auth::user()->image):asset('assets/dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">{{Auth::user()->name}}</a>
+            <a href="#" class="d-block"> {{Auth::user()->first_name .' '.Auth::user()->last_name}}</a>
+
         </div>
     </div>
 
@@ -30,26 +37,37 @@
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
-                        E-L-Platform Users
+                        Users
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     @if(Auth::user()->hasPermission('users-read'))
                     <li class="nav-item">
-                        <a href="{{route('users.index')}}" class="nav-link active">
+                        <a href="{{route('admins.index')}}" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>List Users</p>
+                            <p>Admins</p>
                         </a>
                     </li>
-                    @endif
-                    @if(Auth::user()->hasPermission('users-create'))
-                    <li class="nav-item">
-                        <a href="{{route('users.create')}}" class="nav-link">
+                                           <li class="nav-item">
+                        <a href="{{route('students.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Add User</p>
+                            <p>Students</p>
                         </a>
                     </li>
+                                           <li class="nav-item">
+                        <a href="{{route('parents.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Parents</p>
+                        </a>
+                    </li>
+                                           <li class="nav-item">
+                        <a href="{{route('instructors.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Instructors</p>
+                        </a>
+                    </li>
+
                     @endif
                     <li class="nav-item">
                         <a href="./index3.html" class="nav-link">
@@ -63,7 +81,7 @@
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
-                        E-L-Platform Categories
+                        Categories
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -698,3 +716,4 @@
     </nav>
     <!-- /.sidebar-menu -->
 </div>
+</aside>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table-> string('name');
+
 
             $table->string('phone');
             $table->unsignedBigInteger('account_id')->unique();

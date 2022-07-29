@@ -1,16 +1,12 @@
 <?php
 
-
-namespace App\Http\Controllers;
-
-
-
+namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class courseController extends Controller
+class ParentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +15,8 @@ class courseController extends Controller
      */
     public function index()
     {
-        //
+        $users =User::where('role','like','%admin%')->join('parents','users.id','=','parents.account_id')->get();
+        return view('AdminDashboard.Parents.index',compact('users'));
     }
 
     /**
@@ -30,8 +27,6 @@ class courseController extends Controller
     public function create()
     {
         //
-
-        return view('AdminDashboard.create');
     }
 
     /**

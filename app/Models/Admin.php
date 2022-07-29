@@ -11,7 +11,6 @@ class Admin extends Model
     use LaratrustUserTrait;
     use HasFactory;
     protected $fillable = [
-        'name',
 
         'phone',
          'account_id'

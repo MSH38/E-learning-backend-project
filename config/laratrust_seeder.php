@@ -15,12 +15,28 @@ return [
         'super_admin' => [
             'admins'=>'c,r,u,d',
             'users' => 'c,r,u,d',
+            'instructor' => 'c,r,u,d',
+            'student' => 'c,r,u,d',
+            'parent' => 'c,r,u,d',
             'payments' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'profile' => 'r,u',
+            'categories'=>'c,r,u,d',
+            'subcategories'=>'c,r,u,d',
+            'courses' => 'c,r,u,d',
         ],
         'admin'=>[],
+        'instructor'=>[],
+        'student'=>[],
+        'parent'=>[],
+
         'administrator' => [
             'users' => 'c,r,u,d',
+            'instructor' => 'c,r,u,d',
+            'student' => 'c,r,u,d',
+            'parent' => 'c,r,u,d',
+            'categories'=>'c,r,u,d',
+            'subcategories'=>'c,r,u,d',
+            'courses' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
         'user' => [

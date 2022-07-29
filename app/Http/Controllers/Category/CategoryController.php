@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
 
-namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class courseController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,6 +19,8 @@ class courseController extends Controller
     public function index()
     {
         //
+        $categories=Category::all();
+        return view('adminDashboard.Categories.index',compact('categories'));
     }
 
     /**
@@ -28,8 +30,12 @@ class courseController extends Controller
      */
     public function create()
     {
-        //
-        return view('AdminDashboard.create');
+        //Categories.create
+        return view('AdminDashboard.Categories.create');
+    }
+    public function getSubCategories(Category $category){
+$subcategories=$category->subCategories;
+        return view('subcategories.index',compact('subcategories'));
     }
 
     /**

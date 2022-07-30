@@ -31,7 +31,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake img-circle" src="{{asset('assets/dist/img/logo/logo.jfif')}}"  alt="E-L-Platform" height="200" width="200">
     </div>
 
     <!-- Navbar -->
@@ -112,6 +112,15 @@ if (confirm)
     $('#delete-form').submit();
 }
 
+    });
+    $('.image').change(function (){
+        if(this.files&&this.files[0]){
+            let reader=new FileReader();
+            reader.onload=function (e){
+                $('.image-preview').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
     })
 
 </script>

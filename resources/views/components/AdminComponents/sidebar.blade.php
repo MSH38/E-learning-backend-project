@@ -69,14 +69,17 @@
                     </li>
 
                     @endif
+                        @if(Auth::user()->hasPermission('users-read'))
                     <li class="nav-item">
-                        <a href="./index3.html" class="nav-link">
+                        <a href="{{route('admins.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v3</p>
+                            <p>Add Admin</p>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
+            @if(Auth::user()->hasPermission('categories-read'))
             <li class="nav-item menu-open">
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -86,19 +89,19 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    @if(Auth::user()->hasPermission('users-read'))
+
                     <li class="nav-item">
-                        <a href="{{route('createCategory')}}" class="nav-link active">
+                        <a href="{{route('Category.index')}}" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Add Category</p>
+                            <p>Categories</p>
                         </a>
                     </li>
-                    @endif
-                    @if(Auth::user()->hasPermission('users-create'))
+
+                    @if(Auth::user()->hasPermission('categories-create'))
                     <li class="nav-item">
-                        <a href="{{route('users.create')}}" class="nav-link">
+                        <a href="{{route('Category.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Add User</p>
+                            <p>Add Category </p>
                         </a>
                     </li>
                     @endif
@@ -110,6 +113,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             {{--                    <li class="nav-item">--}}
             {{--                        <a href="pages/widgets.html" class="nav-link">--}}
             {{--                            <i class="nav-icon fas fa-th"></i>--}}

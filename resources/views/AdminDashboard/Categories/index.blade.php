@@ -24,7 +24,7 @@ List Categories
     <div class="card">
         <div class="card card-dark">
             <div class="card-header">
-                <h3 class="card-title">List all Admins</h3>
+                <h3 class="card-title">List all Categories</h3>
             </div>
 
             <!-- /.card-body -->
@@ -32,20 +32,20 @@ List Categories
         <!-- /.card-header -->
         <div class="card-body">
             @if($categories->count()>0)
-<div class="row row-cols-lg-4 row cols-md-2">
+<div class="row row-cols-lg-4 justify-between g-2 row cols-md-2">
     @foreach($categories as $category)
-        <div class="">
+        <div class="col">
             <div class="card mb-2 bg-gradient-dark">
-                <img class="card-img-top" src="{{asset('assets/dist/img/categories-images/'.$category->image)}}" alt="Dist Photo 1">
+                <img class="card-img-top" src="{{asset('assets/dist/img/Category-images/'.$category->image)}}" style="height:200px" alt="Dist Photo 1">
                 <div class="card-img-overlay d-flex flex-column justify-content-end">
                     <h5 class="card-title text-primary text-white">{{$category->name}}</h5>
                     <p class="card-text text-white pb-2 pt-1">{{$category->slug}}</p>
-                    <a href="{{route('Category.edit',['category'=>$category->id])}}" class="btn btn-outline-warning {{Auth::user()->hasPermission('categories-update')?'':'disabled'}} " >  <i class="fa fa-edit"></i>Edit</a>
-                    <form method="post" action="{{route('Category.destroy',['category'=>$category])}}" style="display:inline-block">
+                    <a href="{{route('Category.edit',['Category'=>$category->id])}}" class="btn btn-outline-warning {{Auth::user()->hasPermission('categories-update')?'':'disabled'}} " >  <i class="fa fa-edit"></i>Edit</a>
+                    <form method="post" action="{{route('Category.destroy',['Category'=>$category])}}" class="mt-2"  style="display:inline-block">
                         {{csrf_field()}}
                         {{method_field('delete')}}
 
-                        <button type="submit"  class="btn btn-outline-danger " {{Auth::user()->hasPermission('categories-delete')?'':'disabled'}}> <i class="fa fa-trash"></i>Delete</button>
+                        <button type="submit"  class="btn  btn-outline-danger w-100 " {{Auth::user()->hasPermission('categories-delete')?'':'disabled'}}> <i class="fa fa-trash"></i>Delete</button>
                     </form>
                 </div>
             </div>

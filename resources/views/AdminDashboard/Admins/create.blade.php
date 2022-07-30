@@ -63,9 +63,9 @@
             <div class="form-group">
 
                 <label for="user_image" class="form-label">
-                    <img style="width:200px;height:200px;" src="{{asset('assets/dist/img/avatar5.png')}}" class="img-thumbnail">
+                    <img style="width:200px;height:200px;" src="{{asset('assets/dist/img/avatar5.png')}}" class="img-thumbnail image-preview">
                 </label>
-                <input id="user_image" type="file" name="image" hidden>
+                <input id="user_image" type="file" class="image" name="image" hidden>
             </div>
         <!-- /.card-body -->
             <div class="form-group">

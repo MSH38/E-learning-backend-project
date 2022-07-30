@@ -31,7 +31,7 @@ Route::resource('courseContents', App\Http\Controllers\CourseContentController::
 Route::resource('offers', App\Http\Controllers\OfferController::class);
 //Route::resource('coursestudent', App\Http\Controllers\CourseStudentController::class);
 //Route::resource('category', App\Http\Controllers\categoryController::class);
-Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
+//Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
 
 Route::get('profile',function(){
     return view('adminDashboard.users.profile');
@@ -46,8 +46,8 @@ require __DIR__ . '/categories.php';
 //Route::resource('courseContents', App\Http\Controllers\CourseContentController::class);
 Route::resource('offers', App\Http\Controllers\OfferController::class);
 //Route::resource('coursestudent', App\Http\Controllers\CourseStudentController::class);
-Route::resource('category', App\Http\Controllers\categoryController::class);
-Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
+//Route::resource('category', App\Http\Controllers\categoryController::class);
+//Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
 
 
 require __DIR__.'/auth.php';
@@ -98,10 +98,10 @@ Route::controller(InstructorsSupportController::class)->group(function () {
 
 
 
-Route::any('/category/create', [CategoryController::class, 'createCategory'])->name('createCategory');
-Route::get('categories', [CategoryController::class, 'allCategories'])->name('allCategories');
-Route::any('category/edit/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
-Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
+//Route::any('/category/create', [CategoryController::class, 'createCategory'])->name('createCategory');
+//Route::get('categories', [CategoryController::class, 'allCategories'])->name('allCategories');
+//Route::any('category/edit/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
+//Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
 
 
 Route::resource('Students',\App\Http\Controllers\StudentController::class);

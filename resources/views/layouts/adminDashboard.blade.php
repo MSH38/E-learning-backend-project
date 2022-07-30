@@ -109,7 +109,8 @@ let confirm=window.confirm('Are you sure you want to delete');
 
 if (confirm)
 {
-    $('#delete-form').submit();
+    // $('').submit();
+    e.target.closest('form').submit();
 }
 
     });

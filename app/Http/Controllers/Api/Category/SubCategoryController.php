@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Sub_Category;
 use Illuminate\Http\Request;
 
@@ -76,6 +77,7 @@ public function getCourses($id){
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -84,8 +86,8 @@ public function getCourses($id){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+
     }
 }

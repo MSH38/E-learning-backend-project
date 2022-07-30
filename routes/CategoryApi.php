@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('category', CategoryController::class);
-//git subCategories by Category id
+//get subCategories by Category id
 Route::get('getSubCategoriesByCategoryId/{Category_id}', [CategoryController::class,'getSubCategories']);
 //subcategory resource index,show,...
 Route::resource('subcategory', SubCategoryController::class);

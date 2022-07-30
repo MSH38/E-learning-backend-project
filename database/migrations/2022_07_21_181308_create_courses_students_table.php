@@ -18,8 +18,10 @@ return new class extends Migration
             $table->timestamps();
             $table->double('mark');
             $table->enum('status',['enrolled','finish']);
-            $table->foreignId('studentId')->constrained('students');
-            $table->foreignId('courseId')->constrained('courses');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
         });
     }
 

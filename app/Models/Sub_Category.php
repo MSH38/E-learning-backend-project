@@ -11,7 +11,8 @@ class Sub_Category extends Model
     protected $table='sub_categories';
     protected $fillable=[
         'name',
-        'status'
+        'status',
+        "category_id"
 
     ];
     public function courses(){

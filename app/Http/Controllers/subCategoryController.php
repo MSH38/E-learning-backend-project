@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sub_Category;
+use App\Models\Cource;
 use Illuminate\Http\Request;
 
 class subCategoryController extends Controller
@@ -82,4 +83,6 @@ class subCategoryController extends Controller
     {
         //
     }
+
+
 }

@@ -1,19 +1,12 @@
 <?php
-
-<<<<<<< HEAD
 namespace App\Http\Controllers;
 
-=======
-<<<<<<< HEAD:app/Http/Controllers/Category/CategoryController.php
-namespace App\Http\Controllers\Category;
 
-use App\Http\Controllers\Controller;
-=======
-namespace App\Http\Controllers;
+use App\Models\Course;
 
->>>>>>> refs/remotes/origin/main:app/Http/Controllers/courseController.php
->>>>>>> refs/remotes/origin/main
 use Illuminate\Http\Request;
+
+use Illuminate\Validation\Rule;
 
 class courseController extends Controller
 {
@@ -24,7 +17,17 @@ class courseController extends Controller
      */
     public function index()
     {
-        //
+
+        if(request()->has("subCatID")){
+            $cources = Course::where("sub_category_id",request()->get("subCatID"))->get();
+        return view('courses.new.cources', ['cources' => $cources]);
+
+        }
+        $cources = Course::all();
+
+
+
+        return view('courses.new.cources', ['cources' => $cources]);
     }
 
     /**
@@ -34,11 +37,7 @@ class courseController extends Controller
      */
     public function create()
     {
-        //
-<<<<<<< HEAD
-=======
-        return view('AdminDashboard.create');
->>>>>>> refs/remotes/origin/main
+        return view('courses.new.create-course',);
     }
 
     /**
@@ -48,7 +47,8 @@ class courseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { Course::create($request->all());
+        return redirect()->route('allcourses');
         //
     }
 

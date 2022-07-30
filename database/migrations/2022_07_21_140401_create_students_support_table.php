@@ -17,8 +17,15 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('support');
+<<<<<<< HEAD
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('student_id')->constrained('students');
+=======
+            $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('admin_id')->references('id')->on('admins');
+            $table->foreign('student_id')->references('id')->on('students');
+>>>>>>> c2b11524b044e53381743c08e3e27edda7c083ef
         });
     }
 

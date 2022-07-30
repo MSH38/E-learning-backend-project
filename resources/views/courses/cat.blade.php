@@ -18,30 +18,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Category Slug*</label>
-                                    <input type="text" name="slug" class="form-control" placeholder="Category name" value="{{old('slug')}}" required />
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Select parent category*</label>
-                                    <select type="text" name="parent_id" class="form-control">
-                                        <option value="">None</option>
-                                        @if($categories)
-                                            @foreach($categories as $category)
-                                                <?php $dash=''; ?>
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                                @if(count($category->subcategory))
-                                                    @include('subCategoryList-option',['subcategories' => $category->subcategory])
-                                                @endif
-                                            @endforeach
-                                        @endif
-                                    </select>
-                                </div>
-                            </div>
+                        
+                         
 
                         </div>
                     </div>

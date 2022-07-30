@@ -23,9 +23,14 @@ class CourseContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
+
+    
     {
 
+        error_log($id);
+        return view('courses.new.addvideo',["id" => $id]);
+      
     }
 
     /**
@@ -37,10 +42,12 @@ class CourseContentController extends Controller
     public function store(Request $request)
     {
         courseContent::create([
-            'content_type'=>$request->title ,
+            'content_type'=>"video" ,
             'source'=>$request->source,
             'courseId'=>$request->courseId
         ]);
+        return redirect()->route('allcourses');
+
     }
 
     /**
@@ -49,9 +56,10 @@ class CourseContentController extends Controller
      * @param  \App\Models\courseContent  $courseContent
      * @return \Illuminate\Http\Response
      */
-    public function show(courseContent $courseContent)
+    public function show( $id)
     {
-        //
+        $cource = courseContent::where('courseId', $id)->get();
+        return view("courses.new.cources_videos",["courses"=>$cource]);
     }
 
     /**

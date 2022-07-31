@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "65efe5e9283e8a10f2ae8153c3ea7d7c",
+=======
+    "content-hash": "4863daa63a3023943078276cec89bf43",
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
     "packages": [
         {
             "name": "botman/botman",
@@ -3720,6 +3724,7 @@
             "time": "2022-03-04T15:28:43+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "spatie/macroable",
             "version": "1.0.1",
             "source": {
@@ -3743,6 +3748,42 @@
             "autoload": {
                 "psr-4": {
                     "Spatie\\Macroable\\": "src"
+=======
+            "name": "stripe/stripe-php",
+            "version": "v8.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "1b7b1ea75c744b8a9f55a0942112f8e822a6a482"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/1b7b1ea75c744b8a9f55a0942112f8e822a6a482",
+                "reference": "1b7b1ea75c744b8a9f55a0942112f8e822a6a482",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3751,6 +3792,7 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Freek Van der Herten",
                     "email": "freek@spatie.be",
                     "homepage": "https://spatie.be",
@@ -3768,6 +3810,24 @@
                 "source": "https://github.com/spatie/macroable/tree/1.0.1"
             },
             "time": "2020-11-03T10:15:05+00:00"
+=======
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v8.12.0"
+            },
+            "time": "2022-07-25T14:42:34+00:00"
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
         },
         {
             "name": "symfony/console",

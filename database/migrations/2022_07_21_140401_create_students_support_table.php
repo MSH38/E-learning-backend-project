@@ -16,12 +16,9 @@ return new class extends Migration
         Schema::create('students_support', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->string('support');
-            $table->unsignedBigInteger('admin_id');
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('admin_id')->references('id')->on('admins');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreignId('admin_id')->constrained('admins');
+            $table->foreignId('student_id')->constrained('students');
         });
     }
 

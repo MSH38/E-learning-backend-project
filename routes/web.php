@@ -8,12 +8,9 @@ use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\InstructorsSupportController;
 use App\Http\Controllers\CategoryController;
-<<<<<<< HEAD
 use App\Http\Controllers\StripePaymentController;
-=======
 use App\Http\Controllers\CourseContentController;
 use App\Http\Controllers\courseController;
->>>>>>> c2b11524b044e53381743c08e3e27edda7c083ef
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,9 +117,6 @@ Route::resource('exam',\App\Http\Controllers\ExamController::class);
 Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
 Route::resource('certification',\App\Http\Controllers\CertificationController::class);
 Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
-<<<<<<< HEAD
 
 Route::get('stripe', [StripePaymentController::class,'stripe']);
 Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');
-=======
->>>>>>> c2b11524b044e53381743c08e3e27edda7c083ef

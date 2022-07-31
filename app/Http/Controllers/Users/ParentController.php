@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Users;
 
+<<<<<<< HEAD:app/Http/Controllers/Users/ParentController.php
 use App\Http\Controllers\Controller;
 use App\Models\User;
+=======
+use App\Models\Sub_Category;
+use App\Models\Cource;
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56:app/Http/Controllers/subCategoryController.php
 use Illuminate\Http\Request;
 
 class ParentController extends Controller
@@ -84,4 +89,6 @@ class ParentController extends Controller
     {
         //
     }
+
+
 }

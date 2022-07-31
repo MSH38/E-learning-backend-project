@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('students_support', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->string('support');
+<<<<<<< HEAD
 
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('student_id')->constrained('students');
@@ -27,6 +27,10 @@ return new class extends Migration
 
 
 
+=======
+            $table->foreignId('admin_id')->constrained('admins');
+            $table->foreignId('student_id')->constrained('students');
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
         });
     }
 

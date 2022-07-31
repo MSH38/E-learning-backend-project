@@ -15,17 +15,26 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('title');
-            $table->decimal('fess');
-            $table->string('description');
+            
+            $table->string('name');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('instructor_id');
+            $table->foreign('instructor_id')->references('id')->on('instructors');
+            $table->string('samall_desc');
+            $table->text('description');
+            $table->integer('price');
+            // $table->decimal('fess');
+            
             $table->double('totalHours')->nullable(true);
             $table->integer('videosCount')->nullable(true);
             $table->string('image')->nullable(true);
-            $table->foreignId('instructor_id')->constrained('instructors');
+            // $table->foreignId('instructor_id')->constrained('instructors');
             $table->unsignedBigInteger('accepted-by');
             $table->foreign('accepted-by')->references('id')->on('admins');
             $table->foreignId('sub_category_id')->constrained('sub_categories');
+            $table->timestamps();
+
         });
     }
 

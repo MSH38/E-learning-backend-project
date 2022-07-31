@@ -1,5 +1,6 @@
 <?php
 
+//use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminsController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\InstructorsSupportController;
 use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,8 +47,13 @@ require __DIR__ . '/categories.php';
 //Route::resource('course', App\Http\Controllers\courseController::class);
 //Route::resource('courseContents', App\Http\Controllers\CourseContentController::class);
 Route::resource('offers', App\Http\Controllers\OfferController::class);
+
 //Route::resource('coursestudent', App\Http\Controllers\CourseStudentController::class);
 //Route::resource('category', App\Http\Controllers\categoryController::class);
+
+Route::resource('coursestudent', App\Http\Controllers\CourseStudentController::class);
+Route::resource('category', App\Http\Controllers\categoryController::class);
+
 //Route::resource('subcategory', App\Http\Controllers\subCategoryController::class);
 
 
@@ -104,10 +111,33 @@ Route::controller(InstructorsSupportController::class)->group(function () {
 //Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
 
 
+
+//Route::get('/courses', [courseController::class, 'index'])->name("allcourses");
+//Route::get('/courses/create', [courseController::class, 'create'])->name("create.course");
+//Route::post('/courses/store', [courseController::class, 'store'])->name("course.store");
+//Route::get('/courses/video/create/{id}', [CourseContentController::class, 'create'])->name("course.video.create");
+//Route::get('/courses/video/show/{id}', [CourseContentController::class, 'show'])->name("course.video.show");
+//Route::post('/courses/video/store', [CourseContentController::class, 'store'])->name("course.video.store");
+Route::get('/courses/category', [CategoryController::class, 'index'])->name("allCategories");
+Route::get('/courses/category/create', [CategoryController::class, 'create'])->name("create.category");
+Route::post('/courses/category/store', [CategoryController::class, 'store'])->name("category.store");
+// Route::get('categories', [CategoryController::class, 'allCategories'])->name('allCategories');
+// Route::any('category/edit/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
+// Route::get('category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
+
+Route::resource('Category',App\Http\Controllers\Category\CategoryController::class)->middleware('auth');
+
 Route::resource('Students',\App\Http\Controllers\StudentController::class);
 Route::resource('StudentsSupport',\App\Http\Controllers\StudentSupportController::class);
 Route::resource('exam',\App\Http\Controllers\ExamController::class);
 //Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
 Route::resource('certification',\App\Http\Controllers\CertificationController::class);
 Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
+
+
+//Route::get('stripe', [StripePaymentController::class,'stripe']);
+//Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');
+
+Route::get('stripe', [StripePaymentController::class,'stripe']);
+Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');
 

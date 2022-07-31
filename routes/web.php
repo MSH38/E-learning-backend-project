@@ -10,6 +10,7 @@ use App\Http\Controllers\InstructorsSupportController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseContentController;
 use App\Http\Controllers\courseController;
+use App\Http\Controllers\BotManController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -116,3 +117,7 @@ Route::resource('exam',\App\Http\Controllers\ExamController::class);
 Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
 Route::resource('certification',\App\Http\Controllers\CertificationController::class);
 Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
+
+
+
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);

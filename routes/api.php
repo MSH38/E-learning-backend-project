@@ -97,3 +97,11 @@ Route::get('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class
 Route::post('/offers',[App\Http\Controllers\Api\Course\offerController::class,'store']);
 Route::post('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class,'update']);
 Route::post('/offer/{id}',[App\Http\Controllers\Api\Course\offerController::class,'destroy']);
+
+//exames
+Route::get('exams', [App\Http\Controllers\Api\Exams\ExamController::class,'index']);
+
+Route::post('exams', [App\Http\Controllers\Api\Exams\ExamController::class,'store']);
+Route::put('exams/{id}', [App\Http\Controllers\Api\Exams\ExamController::class,'update']);
+Route::delete('exams/{id}', [App\Http\Controllers\Api\Exams\ExamController::class,'destroy']);
+//Route::resource('exams', [App\Http\Controllers\Api\Exams\ExamApiController::class]);

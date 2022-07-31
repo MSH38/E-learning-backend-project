@@ -9,6 +9,9 @@ use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\InstructorsSupportController;
 use App\Http\Controllers\CategoryController;
+use Http\Controllers\StripePaymentController;
+use App\Http\Controllers\CourseContentController;
+use App\Http\Controllers\courseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,6 +136,7 @@ Route::resource('exam',\App\Http\Controllers\ExamController::class);
 //Route::resource('examContetn',\App\Http\Controllers\ExamContentController::class);
 Route::resource('certification',\App\Http\Controllers\CertificationController::class);
 Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class);
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 
 //Route::get('stripe', [StripePaymentController::class,'stripe']);
@@ -141,3 +145,6 @@ Route::resource('StudentExam',\App\Http\Controllers\StudentExamController::class
 Route::get('stripe', [StripePaymentController::class,'stripe']);
 Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');
 
+
+Route::get('stripe', [StripePaymentController::class,'stripe']);
+Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');

@@ -1,15 +1,11 @@
 <?php
 
-
 namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
-
-//namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
-class courseController extends Controller
+class SubCategory extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +25,6 @@ class courseController extends Controller
     public function create()
     {
         //
-        return view('AdminDashboard.create');
     }
 
     /**

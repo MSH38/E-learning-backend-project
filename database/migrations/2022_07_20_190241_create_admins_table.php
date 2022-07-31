@@ -19,8 +19,9 @@ return new class extends Migration
             $table-> string('email');
             $table-> string('password');
             $table-> string('username');
-            $table->bigInteger('phones');
-            
+            $table->string('image')->nullable(true);
+            $table->string('phone');
+
             $table->timestamps();
         });
     }

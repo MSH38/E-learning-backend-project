@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('role');
+            $table->enum('role',['student','parent','instructor']);
             $table->string('username');
             $table->string('password');
+            $table->unique(['role','username'],'unique_username_and_role');
             $table->timestamps();
         });
     }

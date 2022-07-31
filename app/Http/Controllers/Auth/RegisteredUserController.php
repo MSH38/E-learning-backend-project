@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-
+use App\Models\Admin;
 class RegisteredUserController extends Controller
 {
     /**
@@ -35,19 +35,22 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'username' => ['required', 'string',  'max:255', 'unique:admins'],
+            'phone' => ['required', 'string', 'min:11', 'max:11', 'unique:admins'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
-        $user = User::create([
+        $admin = Admin::create([
             'name' => $request->name,
             'email' => $request->email,
+            'username' => $request->username,
+            'phone'=>$request->phone,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        event(new Registered($admin));
 
-        Auth::login($user);
+        Auth::login($admin);
 
         return redirect(RouteServiceProvider::HOME);
     }

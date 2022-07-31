@@ -15,17 +15,15 @@ return new class extends Migration
     {
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
+
+
             $table->string('phone')->nullable(true);
             $table->text('address');
             $table->date('birth_date')->nullable(true);
-            $table->string('image')->nullable(true);
-            $table->string('scientific_degree')->nullable(true);
-            $table->unsignedBigInteger('account_id');
 
-            $table->foreign('account_id')->references('id')->on('accounts');
+            $table->string('scientific_degree')->nullable(true);
+            $table->unsignedBigInteger('account_id')->unique();
+            $table->foreign('account_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

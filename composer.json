@@ -9,6 +9,7 @@
         "botman/botman": "^2.7",
         "botman/driver-web": "^1.5",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",

@@ -15,13 +15,11 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table-> string('name');
-            $table-> string('email');
-            $table-> string('password');
-            $table-> string('username');
-            $table->string('image')->nullable(true);
-            $table->string('phone');
 
+
+            $table->string('phone');
+            $table->unsignedBigInteger('account_id')->unique();
+            $table->foreign('account_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

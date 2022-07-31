@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
-use App\Models\Sub_Category;
-use App\Models\Cource;
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class subCategoryController extends Controller
+class InstructorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,8 @@ class subCategoryController extends Controller
     public function index()
     {
         //
+        $users =User::where('role','like','%admin%')->join('instructors','users.id','=','instructors.account_id')->get();
+        return view('AdminDashboard.Instructors.index',compact('users'));
     }
 
     /**
@@ -83,6 +85,4 @@ class subCategoryController extends Controller
     {
         //
     }
-
-
 }

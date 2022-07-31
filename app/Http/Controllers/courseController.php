@@ -1,8 +1,19 @@
 <?php
+<<<<<<< HEAD
+
+
+namespace App\Http\Controllers;
+
+
+
+
+use App\Http\Controllers\Controller;
+=======
 namespace App\Http\Controllers;
 
 
 use App\Models\Course;
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
 
 use Illuminate\Http\Request;
 
@@ -37,7 +48,13 @@ class courseController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
+        //
+
+        return view('AdminDashboard.create');
+=======
         return view('courses.new.create-course',);
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
     }
 
     /**

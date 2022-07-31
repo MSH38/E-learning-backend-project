@@ -11,11 +11,9 @@ class Admin extends Model
     use LaratrustUserTrait;
     use HasFactory;
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'username',
-        'phone'
+
+        'phone',
+         'account_id'
     ];
 public function instructors_supported(){
     return $this->hasMany(Instructor_support::class);
@@ -25,6 +23,9 @@ public function instructors_supported(){
 //}
 public function accepted_courses(){
     return $this->hasMany(Course::class,'accepted_by');
+}
+public function account(){
+    return $this->belongsTo(User::class,'account_id');
 }
 //public function offers(){
 //    return $this->hasMany(Offer::class, 'offer_id');

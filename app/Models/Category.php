@@ -9,6 +9,27 @@ class Category extends Model
 {
 
     use HasFactory;
+<<<<<<< HEAD
+    protected $table='categories';
+    protected $fillable=[
+        'name',
+'image',
+        'status',
+        'slug',
+
+
+
+    ];
+    public function subcategory()
+    {
+        return $this->hasMany(\App\Models\Sub_Category::class, 'category_id');
+    }
+
+//    public function parent()
+//    {
+//        return $this->belongsTo(\App\Models\Category::class, 'parent_id');
+//    }
+=======
 
 
     protected $guarded=['id'];
@@ -45,4 +66,5 @@ class Category extends Model
 //     {
 //         return $this->belongsTo(\App\Models\Category::class, 'parent_id');
 //     }
+>>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
 }

@@ -17,20 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('support');
-<<<<<<< HEAD
-
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('student_id')->constrained('students');
-
-
-
-
-
-
-=======
-            $table->foreignId('admin_id')->constrained('admins');
-            $table->foreignId('student_id')->constrained('students');
->>>>>>> cd8630b85284da0471c1cf56f2fb1831633a3d56
         });
     }
 
